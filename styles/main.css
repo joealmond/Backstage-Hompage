@@ -90,12 +90,12 @@ body {
 .nav-list {
   height: 6rem;
   color: var(--font-color-bight);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin: 0.5rem;
   display: flex;
   border-radius: 1.7rem;
-  padding: 0 3rem;
+  padding-right: 1rem;
   gap: 2rem;
   align-items: center;
   justify-content: end;
