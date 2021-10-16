@@ -1,0 +1,137 @@
+/* Base */
+
+html {
+  /* 62,5% of 16px = 10px */
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Variables */
+
+:root {
+  /* Colors */
+
+  --bg-color: hsla(325, 100%, 98%, 100);
+  --font-color-bight: hsla(0, 0%, 100%, 1);
+  --font-color-dimm: hsla(0, 0%, 90%, 0.9);
+  --font-color-magenta: hsla(328, 100%, 45%, 1);
+  --font-color-purple: hsla(293, 92%, 25%, 1);
+  --font-color-black: hsla(0, 0%, 0%, 0, 8);
+  --main-color-magenta: hsla(328, 100%, 45%, 1);
+  --main-color-purle: hsla(293, 92%, 25%, 1);
+  --color-magenta-light: hsla(328, 100%, 45%, 0, 5);
+  --color-purple-light: hsla(293, 92%, 25%, 0, 5);
+  --color-fadeto: hsla(274, 100%, 50%, 0);
+}
+
+/* Utility callsses */
+
+.colorgrad-bg-light {
+  background: linear-gradient(
+    90deg,
+    rgb(252, 226, 242) 0%,
+    rgba(255, 245, 251, 1) 50%,
+    rgb(249, 232, 253) 100%
+  );
+}
+
+.colorgrad-bg-dense {
+  background: linear-gradient(
+      90.5deg,
+      var(--main-color-purle) 45%,
+      var(--color-fadeto) 58%
+    ),
+    var(--main-color-magenta);
+}
+
+.glow-white:hover,
+.glow-white:focus {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  transition: 0.5s ease-in;
+}
+
+.ease-out {
+  transition: 0.2s ease-out;
+}
+
+.box-shadow-light {
+  box-shadow: 4px 4px 3px 3px rgba(21, 1, 255, 0.1);
+}
+
+.hide {
+  display: none;
+}
+
+/* Typography */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+}
+
+/* Layout */
+
+body {
+  max-width: 128rem;
+  margin: auto;
+}
+
+/* Nav component */
+
+.nav-list {
+  height: 6rem;
+  color: var(--font-color-bight);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0.5rem;
+  display: flex;
+  border-radius: 1.7rem;
+  padding: 0 3rem;
+  gap: 2rem;
+  align-items: center;
+  justify-content: end;
+}
+
+.nav-list__logo {
+  position: relative;
+  top: 0.2rem;
+  width: 12rem;
+}
+
+.nav-list__item:first-child {
+  margin-right: auto;
+}
+
+/* Breakpoints */
+
+@media screen and (max-width: 720px) {
+  /* Utility breakpoints */
+  .hide-720 {
+    display: none;
+  }
+
+  .show-720 {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Utility breakpoints */
+  .hide-320 {
+    display: none;
+  }
+
+  /* Under 320px width displaying not supported sign */
+  html:after {
+    content: "Resolutions below 320pxl not supported.";
+  }
+}
