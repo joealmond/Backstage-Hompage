@@ -1,0 +1,12 @@
+img {
+  display: none;
+}
+a::after {
+  content: attr(alt);
+}
+
+/* Under 320px width displaying not supported sign */
+html::before {
+  content: "Figyelem! A 320 pixel szélesség alatti felbontás nem támogatott!";
+  color: red;
+}

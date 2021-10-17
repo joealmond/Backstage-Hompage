@@ -1,0 +1,12 @@
+img {
+  display: none;
+}
+a::after {
+  content: attr(alt);
+}
+
+/* Under 320px width displaying not supported sign */
+html::before {
+  content: "Figyelem! Ez a böngésző nem támogatott!";
+  color: red;
+}
