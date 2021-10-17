@@ -123,21 +123,6 @@ body {
   }
 }
 @media screen and (max-width: 320px) {
-  /* Utility breakpoints */
-  /* .hide-320 {
-    display: none;
-  } */
-  /* img {
-    height: 10px;
-  } */
-
-  /* img {
-    display: none;
-  } */
-
-  /* img::before {
-    content: attr(alt);
-  } */
   img {
     display: none;
   }
@@ -148,6 +133,24 @@ body {
   /* Under 320px width displaying not supported sign */
   html::before {
     content: "Figyelem! A 320 pixel szélesség alatti felbontás nem támogatott!";
+    color: red;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  * {
+    all: unset;
+  }
+  img {
+    display: none;
+  }
+  a::after {
+    content: attr(alt);
+  }
+
+  /* Under 320px width displaying not supported sign */
+  html::before {
+    content: "Figyelem! Ez a böngésző nem támogatott!";
     color: red;
   }
 }
