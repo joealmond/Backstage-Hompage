@@ -137,7 +137,7 @@ body {
   }
 }
 
-@media only sceen and (min-resolution: 2dppx) {
+@media only screen and (min-resolution: 2dppx) {
   * {
     all: unset;
   }
