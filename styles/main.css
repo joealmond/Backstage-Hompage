@@ -137,10 +137,11 @@ body {
   }
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
+@media (min-resolution: 2dppx) {
   * {
     all: unset;
   }
+
   img {
     display: none;
   }
@@ -148,7 +149,6 @@ body {
     content: attr(alt);
   }
 
-  /* Under 320px width displaying not supported sign */
   html::before {
     content: "Figyelem! Ez a böngésző nem támogatott!";
     color: red;
