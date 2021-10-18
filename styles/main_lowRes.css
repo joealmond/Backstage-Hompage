@@ -7,6 +7,6 @@ a::after {
 
 /* Under 320px width displaying not supported sign */
 html::before {
-  content: "Figyelem! A 320 pixel szélesség alatti felbontás nem támogatott!";
+  content: "Figyelem! Ez a képernyőfelbontás nem támogatott!";
   color: red;
 }
