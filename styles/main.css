@@ -1,22 +1,5 @@
-/* Base */
-
-html {
-  font-size: 10px;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Variables */
-
 :root {
-  /* Colors */
+  /* Colors variables*/
 
   --bg-color: hsla(325, 100%, 98%, 100);
   --font-color-bight: hsla(0, 0%, 100%, 1);
@@ -29,6 +12,43 @@ a {
   --color-magenta-light: hsla(328, 100%, 45%, 0, 5);
   --color-purple-light: hsla(293, 92%, 25%, 0, 5);
   --color-fadeto: hsla(274, 100%, 50%, 0);
+
+  /* Base size */
+
+  font-size: 10px;
+
+  /* Typography */
+
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+}
+
+/* Base modifyers */
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 6rem;
+  letter-spacing: -0.015em;
+  color: var(--font-color-purple);
+}
+
+/* Lyout */
+
+body {
+  max-width: 128rem;
+  margin: auto;
 }
 
 /* Utility callsses */
@@ -70,18 +90,27 @@ a {
   display: none;
 }
 
-/* Typography */
-
-body {
-  font-family: "Montserrat", sans-serif;
-  user-select: none;
+.container-pos {
+  margin: 0.5rem;
+  border-radius: 1.7rem;
+  padding-right: 1rem;
 }
 
-/* Layout */
-
-body {
-  max-width: 128rem;
-  margin: auto;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  width: 15rem;
+  height: 4rem;
+  color: var(--font-color-bight);
+  background: linear-gradient(
+      231.26deg,
+      #6e057b 0.12%,
+      rgba(143, 0, 255, 0) 99.81%
+    ),
+    #e3007a;
+  border-radius: 6px;
 }
 
 /* Nav component */
@@ -91,10 +120,7 @@ body {
   color: var(--font-color-bight);
   font-size: 1.2rem;
   font-weight: 500;
-  margin: 0.5rem;
   display: flex;
-  border-radius: 1.7rem;
-  padding-right: 1rem;
   gap: 2rem;
   align-items: center;
   justify-content: end;
@@ -108,6 +134,41 @@ body {
 
 .nav-list__item:first-child {
   margin-right: auto;
+}
+
+/* Hero Component */
+
+.hero__content {
+  display: flex;
+  min-height: 30rem;
+  height: 50vh;
+  max-height: 98.8rem;
+  margin: 0.5rem;
+  overflow: hidden;
+}
+
+.hero__body {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50vw;
+  justify-content: center;
+  padding-left: 5rem;
+}
+
+.hero__image-container {
+  flex-basis: 60vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  width: 105rem;
+  bottom: 0;
+  right: -35rem;
+}
+
+.hero__title {
 }
 
 /* Breakpoints */
