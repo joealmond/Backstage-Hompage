@@ -113,7 +113,6 @@ body {
   margin: 0.5rem 0.5rem 0 0.5rem;
   border-radius: 1.7rem;
   padding-right: 1rem;
-  border: 1px solid rgba(230, 0, 123, 0.1);
 }
 
 .button {
@@ -133,6 +132,32 @@ body {
   border-radius: 6px;
 }
 
+/* Floating Button */
+@media screen and (max-width: 720px) {
+  .line {
+    height: 1;
+    width: 20px;
+    border: 1px solid white;
+  }
+
+  .floating-menu {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    position: fixed;
+    bottom: 5rem;
+    left: 5rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-blend-mode: multiply;
+    background-color: rgba(255, 0, 221, 0.493);
+    transition: 3s;
+  }
+}
 /* Nav component */
 
 .nav-list {
