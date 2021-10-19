@@ -288,6 +288,39 @@ body {
   }
 }
 
+/* Divider component */
+
+.divider__content {
+  height: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--font-color-bight);
+}
+
+.separator1,
+.separator2,
+.separator1-hide,
+.separator2-hide {
+  height: 0.2rem;
+  min-width: 5rem;
+  max-width: 15rem;
+  width: 25vw;
+}
+
+.divider__img {
+  height: 2.6rem;
+}
+
+@media screen and (max-width: 720px) {
+  .separator1-hide {
+    display: none;
+  }
+  .separator2-hide {
+    display: none;
+  }
+}
+
 /* Breakpoints */
 
 @media screen and (max-width: 720px) {
