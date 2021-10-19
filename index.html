@@ -87,9 +87,12 @@
   <script>
     let fn = document.getElementsByClassName("floating-menu")[0];
     window.addEventListener("scroll",function(){
-      fn.style.height = "5rem";
-      fn.style.width = "5rem";
-      setTimeout(function(){ fn.style.height = "0rem"; fn.style.width = "0rem";}, 5000)
+      fn.style.opacity = "0.7";
+      setTimeout(function(){ fn.style.opacity = "0";}, 5000)
 });
+document.body.addEventListener('click', function(){
+            fn.style.opacity = "0.7";
+            setTimeout(function(){ fn.style.opacity = "0";}, 5000)
+      }, true);
   </script>
 </html>
