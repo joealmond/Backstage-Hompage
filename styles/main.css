@@ -380,7 +380,6 @@ body {
 
 .media2__image-container {
   box-sizing: border-box;
-  flex-basis: 60vw;
   flex-grow: 0;
   overflow: hidden;
   border-radius: 1.7rem 0 0 1.7rem;
