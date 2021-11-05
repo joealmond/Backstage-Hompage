@@ -1,5 +1,7 @@
 :root {
-  /* Colors variables*/
+  /*
+   * ─── COLORS VARIABLES ───────────────────────────────────────────────────────────
+   */
 
   --bg-color: hsla(325, 100%, 98%, 100);
   --font-color-bight: hsla(0, 0%, 100%, 1);
@@ -13,18 +15,23 @@
   --color-purple-light: hsla(293, 92%, 25%, 0, 5);
   --color-fadeto: hsla(274, 100%, 50%, 0);
 
-  /* Base size */
+  /*
+   * ─── BASE SIZE ──────────────────────────────────────────────────────────────────
+   */
 
   font-size: 10px;
 
-  /* Typography */
+  /*
+   * ─── TYPOGRAPHY ─────────────────────────────────────────────────────────────────
+   */
 
   font-family: "Montserrat", sans-serif;
   user-select: none;
 }
 
-/* Base modifyers */
-
+/*
+ * ─── BASE MODIFYERS ─────────────────────────────────────────────────────────────
+ */
 ul {
   list-style: none;
 }
@@ -32,6 +39,8 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  font-weight: 500;
+  font-size: 1.4rem;
 }
 
 h1 {
@@ -74,14 +83,18 @@ p {
   color: var(--font-color-purple);
 }
 
-/* Lyout */
+/*
+ * ─── LYOUT ──────────────────────────────────────────────────────────────────────
+ */
 
 body {
   max-width: 128rem;
   margin: auto;
 }
 
-/* Utility callsses */
+/*
+ * ─── UTILITY CALLSSES ───────────────────────────────────────────────────────────
+ */
 
 .colorgrad-bg-light {
   background: linear-gradient(
@@ -127,7 +140,6 @@ body {
 .container-pos {
   margin: 0.5rem 0.5rem 0 0.5rem;
   border-radius: 1.7rem;
-  padding-right: 1rem;
 }
 
 .button {
@@ -160,14 +172,33 @@ body {
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-/* Floating Button */
+.circle-reverse {
+  width: 6rem;
+  height: 6rem;
+  background: linear-gradient(
+      231.26deg,
+      #6e057b 0.12%,
+      rgba(143, 0, 255, 0) 99.81%
+    ),
+    #e3007a;
+}
 
-/* @media screen and (max-width: 720px) { */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/*
+ * ─── FLOATING BUTTON COMPONENT ────────────────────────────────────────────────────────────
+ */
+
 .line {
-  height: 1px;
-  width: 20px;
+  height: 0.1px;
+  width: 18px;
   background-color: white;
-  border: 1px solid white;
+  border: 0.4px solid white;
 }
 
 .floating-menu {
@@ -180,23 +211,20 @@ body {
   position: fixed;
   bottom: 5rem;
   right: 5rem;
-  width: 6rem;
-  height: 6rem;
   border-radius: 50%;
   background-blend-mode: multiply;
-  background-color: var(--font-color-magenta);
   transition: 3s;
   overflow: hidden;
   opacity: 0;
 }
 
-/* Nav component */
+/*
+ * ─── NAV COMPONENT ──────────────────────────────────────────────────────────────
+ */
 
 .nav-list {
   height: 6rem;
   color: var(--font-color-bight);
-  font-size: 1.4rem;
-  font-weight: 500;
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -213,7 +241,9 @@ body {
   margin-right: auto;
 }
 
-/* Hero Component */
+/*
+ * ─── HERO COMPONENT ─────────────────────────────────────────────────────────────
+ */
 
 .hero__content {
   display: flex;
@@ -227,23 +257,16 @@ body {
 .hero__body {
   display: flex;
   flex-direction: column;
-  flex-basis: 50vw;
+  flex-basis: 130vw;
   justify-content: center;
-  padding-left: 5rem;
+  padding: 0 1rem 3rem 5rem;
+  height: 100%;
 }
 
 .hero__image-container {
-  flex-basis: 60vw;
-  position: relative;
+  flex-basis: 130vw;
+  /* position: relative; */
   overflow: hidden;
-}
-
-.hero__image {
-  position: absolute;
-  width: calc(300vw * 0.5);
-  max-width: 105rem;
-  bottom: 0;
-  right: -35rem;
 }
 
 @media screen and (max-width: 720px) {
@@ -256,29 +279,19 @@ body {
   .hero__body {
     height: 45vh;
     min-height: 26rem;
+    padding-bottom: 0;
   }
 
   .hero__image-container {
-    display: flex;
     height: 45vh;
-    position: unset;
-    overflow: visible;
     justify-content: flex-end;
     min-height: 26rem;
   }
-
-  .hero__image {
-    position: unset;
-    max-width: 100vw;
-    object-fit: cover;
-  }
-
-  .hero__title {
-    width: 80vw;
-  }
 }
 
-/* Media component */
+/*
+ * ─── MEDIA COMPONENT ────────────────────────────────────────────────────────────
+ */
 
 .media__content {
   margin-top: 0;
@@ -295,15 +308,7 @@ body {
   box-sizing: border-box;
   flex-basis: 60vw;
   overflow: hidden;
-  padding: 0 0rem;
   border-radius: 0 1.7rem 1.7rem 0;
-}
-
-.media__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
 }
 
 .media__body {
@@ -341,17 +346,15 @@ body {
     height: 26rem;
   }
 
-  .media__image {
-    width: 100%;
-  }
-
   .media__title,
   .media__text {
     width: 85vw;
   }
 }
 
-/* Media2 header component */
+/*
+ * ─── MEDIA2 HEADER COMPONENT ────────────────────────────────────────────────────
+ */
 
 .media2-header__content {
   display: flex;
@@ -366,15 +369,15 @@ body {
   margin: 0;
 }
 
-/* Media2 component */
+/*
+ * ─── MEDIA2 COMPONENT ───────────────────────────────────────────────────────────
+ */
 
 .media2__content {
   margin-top: 0;
   display: flex;
   flex-direction: row;
-  min-height: 32rem;
-  height: 100vh;
-  max-height: 35rem;
+  height: 35rem;
   overflow: hidden;
   padding: 5rem;
   background-color: var(--font-color-bight);
@@ -386,13 +389,6 @@ body {
   flex-grow: 0;
   overflow: hidden;
   border-radius: 1.7rem 0 0 1.7rem;
-}
-
-.media2__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
 }
 
 .media2__body {
@@ -418,9 +414,8 @@ body {
 @media screen and (max-width: 720px) {
   .media2__content {
     flex-wrap: wrap-reverse;
-    min-height: 52rem;
     padding: 3rem 2rem;
-    max-height: 65rem;
+    height: unset;
   }
 
   .media2__body {
@@ -428,8 +423,6 @@ body {
     border-radius: 1.7rem 1.7rem 0 0;
     min-height: 26rem;
     width: 100%;
-    padding-bottom: 2rem;
-    height: unset;
   }
 
   .media2__image-container {
@@ -439,17 +432,15 @@ body {
     min-height: 26rem;
   }
 
-  .media2__image {
-    width: 100%;
-  }
-
   .media2__title,
   .media2__text {
     min-width: unset;
   }
 }
 
-/* Media2 footer component */
+/*
+ * ─── MEDIA2 FOOTER COMPONENT ────────────────────────────────────────────────────
+ */
 
 .media2__footer-content {
   margin-top: 0;
@@ -469,7 +460,7 @@ body {
   max-width: 15rem;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
   flex-basis: 8vw;
 }
 
@@ -479,7 +470,9 @@ body {
   text-align: center;
 }
 
-/* Divider component */
+/*
+ * ─── DIVIDER COMPONENT ──────────────────────────────────────────────────────────
+ */
 
 .divider__content {
   height: 6rem;
@@ -512,7 +505,9 @@ body {
   }
 }
 
-/* Breakpoints */
+/*
+ * ─── BREAKPOINTS ────────────────────────────────────────────────────────────────
+ */
 
 @media screen and (max-width: 720px) {
   /* Breakpoint common base modifyers */
