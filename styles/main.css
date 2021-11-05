@@ -241,6 +241,10 @@ body {
   margin-right: auto;
 }
 
+.nav-list__menu {
+  padding-right: 3rem;
+}
+
 /*
  * ─── HERO COMPONENT ─────────────────────────────────────────────────────────────
  */
