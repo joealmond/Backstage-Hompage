@@ -84,12 +84,20 @@ p {
 }
 
 /*
- * ─── LYOUT ──────────────────────────────────────────────────────────────────────
+ * ─── LAYOUT ──────────────────────────────────────────────────────────────────────
  */
 
 body {
   max-width: 128rem;
   margin: auto;
+  /* Hide scrollbar for IE, Edge add Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /*
