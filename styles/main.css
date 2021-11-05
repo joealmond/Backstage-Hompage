@@ -88,6 +88,7 @@ p {
  */
 
 body {
+  position: absolute;
   max-width: 128rem;
   margin: auto;
 }
