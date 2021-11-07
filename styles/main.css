@@ -95,6 +95,17 @@ body {
   margin: auto;
 }
 
+button,
+::file-selector-button,
+input:is([type="color"], [type="reset"], [type="button"], [type="submit"]) {
+  border: none;
+}
+
+form > * {
+  border: none;
+  border-width: 0;
+}
+
 /*
  * ─── FLOATING BUTTON COMPONENT ────────────────────────────────────────────────────────────
  */
@@ -375,6 +386,53 @@ body {
 }
 
 /*
+ * ─── FORM COMPONENT ─────────────────────────────────────────────────────────────
+ */
+
+.form__content {
+  height: fit-content;
+  overflow: hidden;
+  padding: 5rem;
+  background-color: var(--font-color-bight);
+}
+
+.form__body {
+  padding: 3rem 5rem 3rem 5rem;
+}
+
+.form__body > h3 {
+  padding-left: 1rem;
+}
+
+.form__body-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(25rem, 100%), 1fr));
+  gap: 1rem;
+}
+
+.form__body-field {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  height: 4rem;
+  padding: 1rem;
+  color: var(--font-color-purple);
+}
+
+.form__body-message {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-bottom: 3rem;
+  height: unset;
+}
+
+@media screen and (max-width: 720px) {
+  .form__body {
+    padding: 3rem 1rem 3rem 1rem;
+  }
+}
+
+/*
  * ─── DIVIDER COMPONENT ──────────────────────────────────────────────────────────
  */
 
@@ -477,6 +535,10 @@ body {
   transition: 0.5s ease-in;
 }
 
+.border-purple {
+  border: 1px solid var(--font-color-magenta);
+}
+
 .ease-out {
   transition: 0.2s ease-out;
 }
@@ -576,6 +638,10 @@ body {
 
 .flip-flex {
   flex-direction: row-reverse;
+}
+
+.border-radius {
+  border-radius: 1.7rem;
 }
 
 .two-border-radius--right {
