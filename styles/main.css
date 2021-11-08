@@ -448,6 +448,11 @@ form > * {
  * ─── CONTACTS COMPONENT ─────────────────────────────────────────────────────────
  */
 
+.contacts__strong {
+  display: inline-block;
+  width: 6rem;
+}
+
 .contacts__content {
   height: fit-content;
   overflow: hidden;
@@ -457,6 +462,29 @@ form > * {
 
 .contacts__body-cell {
   justify-self: center;
+  width: 30rem;
+  height: 30rem;
+  /* padding-left: 1rem; */
+}
+
+.contacts__body-cell > p {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.contacts__body-cell > p:first-of-type {
+  padding-top: 3rem;
+}
+
+.contacts__body-cell > p:last-of-type {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.contacts__body-cell:last-child {
+  text-align: center;
 }
 
 .contacts__body {
@@ -465,35 +493,39 @@ form > * {
 
 .contacts__body-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(3, minmax(29rem, 1fr));
+  gap: 0rem;
+  align-items: center;
+}
+
+.contacts__logo {
+  padding: 2rem 0 5rem 0;
+  height: 3rem;
 }
 
 @media screen and (max-width: 1024px) {
   .contacts__body-grid {
     display: grid;
-    grid-template-columns: minmax(28rem, 1fr) minmax(28rem, 1fr);
-
-    gap: 1rem;
+    grid-template-columns: minmax(29rem, 1fr) minmax(29rem, 1fr);
+    /* gap: 1rem; */
   }
+
   .contacts__body-cell-follow {
     grid-column: 1 / span 2;
-    grid-row-start: auto;
-    grid-row-end: span;
   }
 }
 
 @media screen and (max-width: 720px) {
   .contacts__body-grid {
     display: grid;
-    grid-template-columns: minmax(28rem, 1fr);
-
-    gap: 1rem;
+    grid-template-columns: minmax(29rem, 1fr);
+    gap: 0rem;
   }
   .contacts__body-cell-follow {
-    grid-column: 1 / 1;
-    grid-row-start: auto;
-    grid-row-end: auto;
+    grid-column: auto;
+  }
+  .contacts__content {
+    padding: 2rem;
   }
 }
 
@@ -526,6 +558,10 @@ form > * {
 
 .divider__img {
   height: 2.6rem;
+}
+
+.spaceer-05 {
+  height: 0.5rem;
 }
 
 @media screen and (max-width: 720px) {
@@ -720,6 +756,12 @@ form > * {
 
 .two-border-radius--left {
   border-radius: 1.7rem 0 0 1.7rem;
+}
+
+.social-logo {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 720px) {
