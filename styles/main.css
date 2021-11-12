@@ -132,7 +132,25 @@ form > * {
   background-blend-mode: multiply;
   transition: 3s;
   overflow: hidden;
-  opacity: 0;
+  /* opacity: 0; */
+}
+
+.floating-menu__about-us {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+
+  border-radius: 50%;
+  background-blend-mode: multiply;
+  transition: 3s;
+  overflow: hidden;
+  /* opacity: 0; */
 }
 
 /*
