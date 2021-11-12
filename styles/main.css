@@ -139,8 +139,8 @@ form > * {
 }
 
 .floating-menu__back-to-top {
-  bottom: 12rem;
-  right: 7rem;
+  bottom: 19rem;
+  right: 5rem;
 }
 
 .floating-menu__contacts {
@@ -149,23 +149,23 @@ form > * {
 }
 
 .floating-menu__about-us {
-  bottom: 19rem;
-  right: 5rem;
-}
-
-.floating-menu__refs {
   bottom: 17rem;
   right: 12rem;
 }
 
-.floating-menu__services {
+.floating-menu__refs {
   bottom: 12rem;
   right: 17rem;
 }
 
-.floating-menu__jobs {
+.floating-menu__services {
   bottom: 5rem;
   right: 19rem;
+}
+
+.floating-menu__jobs {
+  bottom: 12rem;
+  right: 7rem;
 }
 
 /*
@@ -794,6 +794,12 @@ form > * {
 .social-logo {
   width: 4rem;
   height: 4rem;
+  padding: 1rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
   padding: 1rem;
 }
 
