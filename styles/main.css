@@ -125,8 +125,6 @@ form > * {
   align-items: center;
   gap: 4px;
   position: fixed;
-  bottom: 5rem;
-  right: 5rem;
 
   border-radius: 50%;
   background-blend-mode: multiply;
@@ -135,22 +133,39 @@ form > * {
   /* opacity: 0; */
 }
 
-.floating-menu__about-us {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  position: fixed;
+.floating-menu__menu {
   bottom: 5rem;
   right: 5rem;
+}
 
-  border-radius: 50%;
-  background-blend-mode: multiply;
-  transition: 3s;
-  overflow: hidden;
-  /* opacity: 0; */
+.floating-menu__back-to-top {
+  bottom: 12rem;
+  right: 7rem;
+}
+
+.floating-menu__contacts {
+  bottom: 7rem;
+  right: 12rem;
+}
+
+.floating-menu__about-us {
+  bottom: 19rem;
+  right: 5rem;
+}
+
+.floating-menu__refs {
+  bottom: 17rem;
+  right: 12rem;
+}
+
+.floating-menu__services {
+  bottom: 12rem;
+  right: 17rem;
+}
+
+.floating-menu__jobs {
+  bottom: 5rem;
+  right: 19rem;
 }
 
 /*
