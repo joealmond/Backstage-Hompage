@@ -129,13 +129,10 @@ form > * {
   align-items: center;
   gap: 4px;
   position: fixed;
-
   border-radius: 50%;
   background-blend-mode: multiply;
   transition: 3s;
   overflow: hidden;
-  transition: opacity 1s;
-  /* opacity: 0; */
 }
 
 .floating-menu__collapsible {
@@ -443,6 +440,7 @@ form > * {
   overflow: hidden;
   padding: 5rem;
   background-color: var(--font-color-bight);
+  color: var(--font-color-purple);
 }
 
 .form__body {
@@ -467,6 +465,10 @@ form > * {
   color: var(--font-color-purple);
 }
 
+.form__body-field::placeholder {
+  color: var(--font-color-purple);
+}
+
 .form__body-message {
   box-sizing: border-box;
   display: block;
@@ -477,7 +479,8 @@ form > * {
   min-height: 6rem;
 }
 
-.form__body-field:focus {
+.form__body-field:focus,
+.form__body-field:active {
   outline-color: var(--font-color-purple) !important;
   outline-style: solid;
   border-style: none;
