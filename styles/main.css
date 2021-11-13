@@ -139,11 +139,14 @@ form > * {
 }
 
 .floating-menu__collapsible {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .floating-menu__collapsible-expanded {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .floating-menu__menu {
@@ -817,11 +820,27 @@ form > * {
 }
 
 .collapsible {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .collapsible-expanded {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  animation: 1s fadeOut;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 720px) {
