@@ -41,6 +41,7 @@ function floatingMenuHelper(event) {
       removeFloatingMenuEventListener();
       removeFloatingMenuMenuEventListener();
       window.addEventListener("click", floatingMenuButtonHelper);
+      window.addEventListener("scroll", floatingMenuButtonHelper);
       menumenuOpen === false;
       menuOpen = false;
     }, 5000);
@@ -48,6 +49,7 @@ function floatingMenuHelper(event) {
     removeFloatingMenuEventListener();
     removeFloatingMenuMenuEventListener();
     window.addEventListener("click", floatingMenuButtonHelper);
+    window.addEventListener("scroll", floatingMenuButtonHelper);
     menumenuOpen === false;
     menuOpen = false;
     clearTimeout(timer);
@@ -81,7 +83,9 @@ function floatingMenuButtonHelper(event) {
     removeFloatingMenuMenuEventListener();
     menumenuOpen = false;
     window.addEventListener("click", floatingMenuButtonHelper);
+    window.addEventListener("scroll", floatingMenuButtonHelper);
   }, 5000);
 }
 
 window.addEventListener("click", floatingMenuButtonHelper);
+window.addEventListener("scroll", floatingMenuButtonHelper);
