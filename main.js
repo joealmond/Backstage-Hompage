@@ -6,28 +6,15 @@ let timer;
 
 let menuOpen = false;
 
-// captureClickAndToggle(fn, toggleMenu, "collapsible-expanded");
+const floatingToggleMenu = document.querySelectorAll(
+  ".floating-menu__collapsible"
+);
 
-// function captureClickAndToggle(
-//   selectedElement,
-//   nodeListOfCollapsibleElement,
-//   classNameToToggle
-// ) {
-//   selectedElement.addEventListener("click", function () {
-//     let t = setTimeout(() => {
-//       nodeListOfCollapsibleElement.forEach(function (e) {
-//         e.classList.toggle(classNameToToggle);
-//       });
-//     }, 5000);
-//     nodeListOfCollapsibleElement.forEach(function (e) {
-//       e.classList.toggle(classNameToToggle);
-//       clearTimeout(t);
-//     });
-//   });
-// }
+const floatingMenu = document.querySelector(".floating-menu__menu");
 
-// const timer = setTimeout(() => {}, 5000);
-// clearTimeout(timer);
+let timermenu;
+
+let menumenuOpen = false;
 
 function removeCollapsibleElements(event) {
   event.classList.remove("collapsible-expanded");
@@ -46,19 +33,55 @@ function addFloatingMenuEventListener(event) {
 }
 
 function floatingMenuHelper(event) {
-  if (menuOpen === true) {
-    removeFloatingMenuEventListener();
-    menuOpen = false;
-    clearTimeout(timer);
-  } else {
+  clearTimeout(timermenu);
+  if (menuOpen === false) {
     addFloatingMenuEventListener();
     menuOpen = true;
     timer = setTimeout(() => {
       removeFloatingMenuEventListener();
+      removeFloatingMenuMenuEventListener();
+      window.addEventListener("click", floatingMenuButtonHelper);
+      menumenuOpen === false;
       menuOpen = false;
     }, 5000);
+  } else {
+    removeFloatingMenuEventListener();
+    removeFloatingMenuMenuEventListener();
+    window.addEventListener("click", floatingMenuButtonHelper);
+    menumenuOpen === false;
+    menuOpen = false;
+    clearTimeout(timer);
   }
 }
 
 fn.addEventListener("click", floatingMenuHelper);
-// fn.removeEventListener("click", floatingMenuEventListener);
+
+function removeCollapsibleMenuElements(event) {
+  event.classList.remove("floating-menu__collapsible-expanded");
+}
+
+function addCollapsibleMenuElements(event) {
+  event.classList.add("floating-menu__collapsible-expanded");
+}
+
+function removeFloatingMenuMenuEventListener(event) {
+  floatingToggleMenu.forEach(removeCollapsibleMenuElements);
+}
+
+function addFloatingMenuMenuEventListener(event) {
+  floatingToggleMenu.forEach(addCollapsibleMenuElements);
+}
+
+function floatingMenuButtonHelper(event) {
+  addFloatingMenuMenuEventListener();
+  clearTimeout(timermenu);
+
+  menumenuOpen = true;
+  timermenu = setTimeout(() => {
+    removeFloatingMenuMenuEventListener();
+    menumenuOpen = false;
+    window.addEventListener("click", floatingMenuButtonHelper);
+  }, 5000);
+}
+
+window.addEventListener("click", floatingMenuButtonHelper);

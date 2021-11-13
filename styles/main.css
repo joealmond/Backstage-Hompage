@@ -138,6 +138,14 @@ form > * {
   /* opacity: 0; */
 }
 
+.floating-menu__collapsible {
+  display: none;
+}
+
+.floating-menu__collapsible-expanded {
+  display: flex;
+}
+
 .floating-menu__menu {
   bottom: 5rem;
   right: 5rem;
