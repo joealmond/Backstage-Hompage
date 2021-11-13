@@ -90,6 +90,10 @@ p {
  * ─── LAYOUT ──────────────────────────────────────────────────────────────────────
  */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: 128rem;
   margin: auto;
@@ -130,6 +134,7 @@ form > * {
   background-blend-mode: multiply;
   transition: 3s;
   overflow: hidden;
+  transition: opacity 1s;
   /* opacity: 0; */
 }
 
@@ -801,6 +806,14 @@ form > * {
   width: 3rem;
   height: 3rem;
   padding: 1rem;
+}
+
+.collapsible {
+  display: none;
+}
+
+.collapsible-expanded {
+  display: flex;
 }
 
 @media screen and (max-width: 720px) {
