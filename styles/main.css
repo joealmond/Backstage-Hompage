@@ -208,6 +208,38 @@ form > * {
   padding-right: 3rem;
 }
 
+.nav-list__mobile-button {
+  color: var(--font-color-purple);
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  border: 1px solid var(--font-color-purple);
+  text-align: center;
+  padding: 1.3rem;
+  margin-right: 3.5rem;
+}
+
+.nav-list__mobile-button > a {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 720px) {
+  .nav-list__mobile-content {
+    display: felx;
+    display: none;
+    position: fixed;
+    background-color: wheat;
+    height: 70vh;
+    width: 71.5vw;
+    top: 8rem;
+    margin: 0 8.5vw 0 8.5vw;
+  }
+
+  .nav-list__mobile-body {
+    display: felx;
+    display: none;
+  }
+}
+
 /*
  * ─── HERO COMPONENT ─────────────────────────────────────────────────────────────
  */
@@ -637,16 +669,6 @@ form > * {
     line-height: 4rem;
     letter-spacing: -0.015em;
   }
-
-  /* Utility breakpoints */
-
-  .hide-720 {
-    display: none;
-  }
-
-  .show-720 {
-    display: initial;
-  }
 }
 
 @media screen and (max-width: 319px) {
@@ -853,5 +875,15 @@ form > * {
 
   .two-border-radius--bottom {
     border-radius: 0 0 1.7rem 1.7rem;
+  }
+
+  /* Utility breakpoints */
+
+  .hide-720 {
+    display: none;
+  }
+
+  .show-720 {
+    display: initial;
   }
 }
