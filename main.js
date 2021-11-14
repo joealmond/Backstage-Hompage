@@ -77,7 +77,6 @@ function addFloatingMenuMenuEventListener(event) {
 function floatingMenuButtonHelper(event) {
   addFloatingMenuMenuEventListener();
   clearTimeout(timermenu);
-
   menumenuOpen = true;
   timermenu = setTimeout(() => {
     removeFloatingMenuMenuEventListener();
@@ -89,3 +88,22 @@ function floatingMenuButtonHelper(event) {
 
 window.addEventListener("click", floatingMenuButtonHelper);
 window.addEventListener("scroll", floatingMenuButtonHelper);
+
+const toggleMobileMenu = document.querySelectorAll(".nav-menu__collapsible");
+
+const selectMobileMenuButton = document.querySelector(".mobile-button");
+
+function mobilMenuHelper(event) {
+  addMobilMenuEventListener(event);
+  // event.stopImmediatePropagation();
+}
+
+function toggleMobilMenu(event) {
+  event.classList.toggle("nav-menu__collapsible-expanded");
+}
+
+function addMobilMenuEventListener(event) {
+  toggleMobileMenu.forEach(toggleMobilMenu);
+}
+
+selectMobileMenuButton.addEventListener("click", mobilMenuHelper);

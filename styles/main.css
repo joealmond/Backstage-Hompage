@@ -33,6 +33,7 @@
  * ─── BASE MODIFYERS ─────────────────────────────────────────────────────────────
  */
 ul {
+  display: flex;
   list-style: none;
 }
 
@@ -41,6 +42,11 @@ a {
   color: inherit;
   font-weight: 500;
   font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -122,6 +128,7 @@ form > * {
 }
 
 .floating-menu {
+  z-index: 100;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -136,13 +143,13 @@ form > * {
 }
 
 .floating-menu__collapsible {
-  visibility: hidden;
-  opacity: 0;
+  /* visibility: hidden; */
+  opacity: 0.4;
   transition: visibility 0s, opacity 0.5s linear;
 }
 
 .floating-menu__collapsible-expanded {
-  visibility: visible;
+  /* visibility: visible; */
   opacity: 1;
 }
 
@@ -192,6 +199,7 @@ form > * {
   gap: 2rem;
   align-items: center;
   justify-content: end;
+  box-sizing: border-box;
 }
 
 .nav-list__logo {
@@ -208,35 +216,58 @@ form > * {
   padding-right: 3rem;
 }
 
-.nav-list__mobile-button {
+.mobile-button-helper {
+  width: 8rem;
+}
+.mobile-button {
   color: var(--font-color-purple);
-  background-color: whitesmoke;
+  background-color: var(--font-color-bight);
   border-radius: 1rem;
   border: 1px solid var(--font-color-purple);
   text-align: center;
-  padding: 1.3rem;
-  margin-right: 3.5rem;
-}
-
-.nav-list__mobile-button > a {
+  width: 4rem;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
   font-weight: 500;
+  font-size: 1.5rem;
+}
+.nav-list__mobile-body {
+  display: none;
 }
 
 @media screen and (max-width: 720px) {
   .nav-list__mobile-content {
+    box-sizing: border-box;
+    z-index: 10;
     display: felx;
-    display: none;
-    position: fixed;
-    background-color: wheat;
-    height: 70vh;
-    width: 71.5vw;
-    top: 8rem;
-    margin: 0 8.5vw 0 8.5vw;
+    background-color: var(--font-color-bight);
+    height: fit-content;
+    min-width: 51vw;
+    min-height: 40rem;
+    overflow: hidden;
+    padding: 0 1rem 0 1rem;
   }
 
   .nav-list__mobile-body {
-    display: felx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    gap: 0.5rem;
+  }
+
+  .nav-list__mobile-item > a {
+    font-size: 1.8rem;
+  }
+  .nav-menu__collapsible {
     display: none;
+  }
+
+  .nav-menu__collapsible-expanded {
+    display: flex;
   }
 }
 
@@ -512,10 +543,11 @@ form > * {
 }
 
 .form__body-field:focus,
-.form__body-field:active {
+.form__body-field:active,
+.form__body-field::selection {
   outline-color: var(--font-color-purple) !important;
-  outline-style: solid;
-  border-style: none;
+  outline-style: solid !important;
+  border-style: none !important;
 }
 
 @media screen and (max-width: 720px) {
@@ -585,6 +617,10 @@ form > * {
 .contacts__logo {
   padding: 2rem 0 5rem 0;
   height: 3rem;
+}
+
+.contacts__body-cell-follow > a {
+  display: inline;
 }
 
 @media screen and (max-width: 1024px) {
@@ -715,6 +751,14 @@ form > * {
   transition: 0.5s ease-in;
 }
 
+.glow-purple:hover,
+.glow-purple:focus {
+  text-shadow: 0 0 7px var(--font-color-purple),
+    0 0 10px var(--font-color-purple), 0 0 21px var(--font-color-purple),
+    0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  transition: 0.5s ease-in;
+}
+
 .border-purple {
   border: 1px solid var(--font-color-magenta);
 }
@@ -758,10 +802,27 @@ form > * {
       rgba(143, 0, 255, 0) 99.81%
     ),
     #e3007a;
-  border-radius: 6px;
+  border-radius: 0.6rem;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 6rem;
+  color: var(--font-color-bight);
+  background: linear-gradient(
+      231.26deg,
+      #6e057b 0.12%,
+      rgba(143, 0, 255, 0) 99.81%
+    ),
+    #e3007a;
+  border-radius: 2rem;
 }
 
 .circle {
+  z-index: 0;
   width: 6rem;
   height: 6rem;
   background: linear-gradient(
@@ -853,11 +914,11 @@ form > * {
 .collapsible-expanded {
   visibility: visible;
   opacity: 1;
-  animation: 1s fadeOut;
+  /* animation: 1s fadeOut;
   animation-delay: 4s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 }
-@keyframes fadeOut {
+/* @keyframes fadeOut {
   50% {
     visibility: visible;
     opacity: 1;
@@ -866,7 +927,7 @@ form > * {
     opacity: 0;
     visibility: hidden;
   }
-}
+} */
 
 @media screen and (max-width: 720px) {
   .two-border-radius--top {
@@ -884,6 +945,6 @@ form > * {
   }
 
   .show-720 {
-    display: initial;
+    display: flex;
   }
 }
