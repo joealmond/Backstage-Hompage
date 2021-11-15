@@ -143,13 +143,13 @@ form > * {
 }
 
 .floating-menu__collapsible {
-  /* visibility: hidden; */
-  opacity: 0.4;
+  visibility: hidden;
+  opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
 
 .floating-menu__collapsible-expanded {
-  /* visibility: visible; */
+  visibility: visible;
   opacity: 1;
 }
 
@@ -230,7 +230,7 @@ form > * {
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .nav-list__mobile-body {
   display: none;
@@ -757,6 +757,11 @@ form > * {
     0 0 10px var(--font-color-purple), 0 0 21px var(--font-color-purple),
     0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
   transition: 0.5s ease-in;
+}
+
+.floating-menu__icon {
+  font-size: 2.5rem;
+  color: var(--font-color-bight);
 }
 
 .border-purple {

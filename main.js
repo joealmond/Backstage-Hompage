@@ -10,7 +10,7 @@ const floatingToggleMenu = document.querySelectorAll(
   ".floating-menu__collapsible"
 );
 
-const floatingMenu = document.querySelector(".floating-menu__menu");
+// const floatingMenu = document.querySelector(".floating-menu__menu");
 
 let timermenu;
 
@@ -23,6 +23,9 @@ function removeCollapsibleElements(event) {
 function addCollapsibleElements(event) {
   event.classList.add("collapsible-expanded");
 }
+function toggleCollapsibleElements(event) {
+  event.classList.toggle("collapsible-expanded");
+}
 
 function removeFloatingMenuEventListener(event) {
   toggleMenu.forEach(removeCollapsibleElements);
@@ -30,6 +33,10 @@ function removeFloatingMenuEventListener(event) {
 
 function addFloatingMenuEventListener(event) {
   toggleMenu.forEach(addCollapsibleElements);
+}
+
+function toggleFloatingMenuEventListener(event) {
+  toggleMenu.forEach(toggleCollapsibleElements);
 }
 
 function floatingMenuHelper(event) {
@@ -58,12 +65,32 @@ function floatingMenuHelper(event) {
 
 fn.addEventListener("click", floatingMenuHelper);
 
+document.querySelectorAll(".collapsible").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    toggleHelper(event);
+  });
+});
+
+function toggleHelper(event) {
+  toggleFloatingMenuEventListener();
+  if (menuOpen === false) {
+    menuOpen = true;
+  } else if (menuOpen === true) {
+    menuOpen = false;
+  }
+  clearTimeout(timer);
+  clearTimeout(timermenu);
+}
+
 function removeCollapsibleMenuElements(event) {
   event.classList.remove("floating-menu__collapsible-expanded");
 }
 
 function addCollapsibleMenuElements(event) {
   event.classList.add("floating-menu__collapsible-expanded");
+}
+function toggleCollapsibleMenuElements(event) {
+  event.classList.toggle("floating-menu__collapsible-expanded");
 }
 
 function removeFloatingMenuMenuEventListener(event) {
@@ -72,6 +99,10 @@ function removeFloatingMenuMenuEventListener(event) {
 
 function addFloatingMenuMenuEventListener(event) {
   floatingToggleMenu.forEach(addCollapsibleMenuElements);
+}
+
+function toggleFloatingMenuMenuEventListener(event) {
+  floatingToggleMenu.forEach(toggleCollapsibleMenuElements);
 }
 
 function floatingMenuButtonHelper(event) {
