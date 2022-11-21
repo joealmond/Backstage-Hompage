@@ -92,6 +92,15 @@ p {
   color: var(--font-color-purple);
 }
 
+p > a {
+  display: inline;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  letter-spacing: -0.015em;
+}
+
 /*
  * ─── LAYOUT ──────────────────────────────────────────────────────────────────────
  */
@@ -151,6 +160,16 @@ form > * {
 .floating-menu__collapsible-expanded {
   visibility: visible;
   opacity: 1;
+}
+
+.floating-menu__placeholder {
+  width: 30vw;
+  height: 30vw;
+  min-width: 20rem;
+  min-height: 20rem;
+  background-color: rgba(19, 207, 207, 0);
+  bottom: -2rem;
+  right: -2rem;
 }
 
 .floating-menu__menu {
@@ -578,11 +597,17 @@ form > * {
 
 .contacts__body-cell {
   justify-self: center;
-  width: 30rem;
-  height: 30rem;
-  /* padding-left: 1rem; */
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
 }
 
+.social-logo__container {
+  display: flex;
+  width: 30rem;
+  align-self: center;
+}
 .contacts__body-cell > p {
   color: black;
   font-size: 1.2rem;
@@ -609,7 +634,7 @@ form > * {
 
 .contacts__body-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(29rem, 1fr));
+  grid-template-columns: repeat(3, minmax(40rem, 1fr));
   gap: 0rem;
   align-items: center;
 }
@@ -617,16 +642,18 @@ form > * {
 .contacts__logo {
   padding: 2rem 0 5rem 0;
   height: 3rem;
+  width: max-content;
+  align-self: center;
 }
 
 .contacts__body-cell-follow > a {
   display: inline;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1270px) {
   .contacts__body-grid {
     display: grid;
-    grid-template-columns: minmax(29rem, 1fr) minmax(29rem, 1fr);
+    grid-template-columns: minmax(40rem, 1fr) minmax(40rem, 1fr);
     /* gap: 1rem; */
   }
 
@@ -635,10 +662,10 @@ form > * {
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 880px) {
   .contacts__body-grid {
     display: grid;
-    grid-template-columns: minmax(29rem, 1fr);
+    grid-template-columns: minmax(40rem, 1fr);
     gap: 0rem;
   }
   .contacts__body-cell-follow {
@@ -649,10 +676,10 @@ form > * {
   }
 }
 
-.contacts__body-grid > * {
-  /* min-width: 28rem; */
-  /* padding: 0 2rem 0 2rem; */
-}
+/* .contacts__body-grid > * {
+  min-width: 28rem;
+  padding: 0 2rem 0 2rem;
+} */
 
 /*
  * ─── DIVIDER COMPONENT ──────────────────────────────────────────────────────────

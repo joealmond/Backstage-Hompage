@@ -2,6 +2,10 @@ const toggleMenu = document.querySelectorAll(".collapsible");
 
 const fn = document.getElementsByClassName("floating-menu__menu")[0];
 
+const menuPlaceholder = document.getElementsByClassName(
+  "floating-menu__placeholder"
+)[0];
+
 let timer;
 
 let menuOpen = false;
@@ -119,6 +123,7 @@ function floatingMenuButtonHelper(event) {
 
 window.addEventListener("click", floatingMenuButtonHelper);
 window.addEventListener("scroll", floatingMenuButtonHelper);
+menuPlaceholder.addEventListener("mousemove", floatingMenuButtonHelper);
 
 const toggleMobileMenu = document.querySelectorAll(".nav-menu__collapsible");
 
