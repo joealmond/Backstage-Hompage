@@ -597,6 +597,7 @@ form > * {
 
 .contacts__body-cell {
   justify-self: center;
+  align-items: center;
   width: 40rem;
   height: 40rem;
   display: flex;
@@ -642,7 +643,7 @@ form > * {
 .contacts__logo {
   padding: 2rem 0 5rem 0;
   height: 3rem;
-  width: max-content;
+  width: 14rem;
   align-self: center;
 }
 
@@ -672,7 +673,7 @@ form > * {
     grid-column: auto;
   }
   .contacts__content {
-    padding: 2rem;
+    padding: 0rem;
   }
 }
 
