@@ -44,6 +44,7 @@ function toggleFloatingMenuEventListener(event) {
 }
 
 function floatingMenuHelper(event) {
+  alert("Clicked!")
   clearTimeout(timermenu);
   if (menuOpen === false) {
     addFloatingMenuEventListener();
@@ -118,7 +119,6 @@ function floatingMenuButtonHelper(event) {
     menumenuOpen = false;
     window.addEventListener("click", floatingMenuButtonHelper);
     window.addEventListener("scroll", floatingMenuButtonHelper);
-    window.addEventListener('touchstart', floatingMenuButtonHelper);
   }, 5000);
 }
 
