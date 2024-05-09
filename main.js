@@ -44,30 +44,33 @@ function toggleFloatingMenuEventListener(event) {
 }
 
 function floatingMenuHelper(event) {
-  alert("Clicked!")
-  clearTimeout(timermenu);
-  if (menuOpen === false) {
-    addFloatingMenuEventListener();
-    menuOpen = true;
-    timer = setTimeout(() => {
+  if (event.type === "click" || event.type === "touchstart") {
+    alert("Clicked!");
+    clearTimeout(timermenu);
+    if (menuOpen === false) {
+      addFloatingMenuEventListener();
+      menuOpen = true;
+      timer = setTimeout(() => {
+        removeFloatingMenuEventListener();
+        removeFloatingMenuMenuEventListener();
+        window.addEventListener("click", floatingMenuButtonHelper);
+        window.addEventListener("scroll", floatingMenuButtonHelper);
+        menumenuOpen === false;
+        menuOpen = false;
+      }, 5000);
+    } else {
       removeFloatingMenuEventListener();
       removeFloatingMenuMenuEventListener();
       window.addEventListener("click", floatingMenuButtonHelper);
       window.addEventListener("scroll", floatingMenuButtonHelper);
       menumenuOpen === false;
       menuOpen = false;
-    }, 5000);
-  } else {
-    removeFloatingMenuEventListener();
-    removeFloatingMenuMenuEventListener();
-    window.addEventListener("click", floatingMenuButtonHelper);
-    window.addEventListener("scroll", floatingMenuButtonHelper);
-    menumenuOpen === false;
-    menuOpen = false;
-    clearTimeout(timer);
+      clearTimeout(timer);
+    }
   }
 }
 
+fn.addEventListener('touchstart', floatingMenuHelper); 
 fn.addEventListener("click", floatingMenuHelper);
 
 document.querySelectorAll(".collapsible").forEach((item) => {
