@@ -44,28 +44,26 @@ function toggleFloatingMenuEventListener(event) {
 }
 
 function floatingMenuHelper(event) {
-  if (event.type === "click" || event.type === "touchstart") {
-    clearTimeout(timermenu);
-    if (menuOpen === false) {
-      addFloatingMenuEventListener();
-      menuOpen = true;
-      timer = setTimeout(() => {
-        removeFloatingMenuEventListener();
-        removeFloatingMenuMenuEventListener();
-        window.addEventListener("click", floatingMenuButtonHelper);
-        window.addEventListener("scroll", floatingMenuButtonHelper);
-        menumenuOpen === false;
-        menuOpen = false;
-      }, 5000);
-    } else {
+  clearTimeout(timermenu);
+  if (menuOpen === false) {
+    addFloatingMenuEventListener();
+    menuOpen = true;
+    timer = setTimeout(() => {
       removeFloatingMenuEventListener();
       removeFloatingMenuMenuEventListener();
       window.addEventListener("click", floatingMenuButtonHelper);
       window.addEventListener("scroll", floatingMenuButtonHelper);
       menumenuOpen === false;
       menuOpen = false;
-      clearTimeout(timer);
-    }
+    }, 5000);
+  } else {
+    removeFloatingMenuEventListener();
+    removeFloatingMenuMenuEventListener();
+    window.addEventListener("click", floatingMenuButtonHelper);
+    window.addEventListener("scroll", floatingMenuButtonHelper);
+    menumenuOpen === false;
+    menuOpen = false;
+    clearTimeout(timer);
   }
 }
 
@@ -120,6 +118,7 @@ function floatingMenuButtonHelper(event) {
     menumenuOpen = false;
     window.addEventListener("click", floatingMenuButtonHelper);
     window.addEventListener("scroll", floatingMenuButtonHelper);
+    window.addEventListener('touchstart', floatingMenuButtonHelper);
   }, 5000);
 }
 

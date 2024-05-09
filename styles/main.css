@@ -173,8 +173,6 @@ form > * {
 }
 
 .floating-menu__menu {
-  cursor: pointer;
-  touch-action: manipulation; 
   bottom: 5rem;
   right: 5rem;
 }
