@@ -219,12 +219,22 @@ form > * {
   align-items: center;
   justify-content: end;
   box-sizing: border-box;
+  width: auto;
 }
 
 .nav-list__logo {
-  position: relative;
-  top: 0.2rem;
   width: 12rem;
+}
+
+.ginop__logo {
+  background-color: white;
+  width: 22rem;
+}
+
+.nav-list__item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 .nav-list__item:first-child {
@@ -236,7 +246,7 @@ form > * {
 }
 
 .mobile-button-helper {
-  width: 8rem;
+  width: 0;
 }
 .mobile-button {
   color: var(--font-color-purple);
@@ -962,7 +972,11 @@ form > * {
   }
 } */
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 850px) {
+  .mobile-button-helper {
+    width: 8rem;
+  }
+
   .two-border-radius--top {
     border-radius: 1.7rem 1.7rem 0 0;
   }
@@ -979,5 +993,26 @@ form > * {
 
   .show-720 {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .nav-list {
+    height: 12rem;
+  }
+
+  .nav-list__item {
+    flex-direction: column;
+  }
+
+  .nav-list__item > a {
+    justify-content: start;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .mobile-button-helper {
+    width: 6rem;
   }
 }
