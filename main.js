@@ -45,7 +45,6 @@ function toggleFloatingMenuEventListener(event) {
 
 function floatingMenuHelper(event) {
   if (event.type === "click" || event.type === "touchstart") {
-    alert("Clicked!");
     clearTimeout(timermenu);
     if (menuOpen === false) {
       addFloatingMenuEventListener();
